@@ -21,7 +21,7 @@ def test_virt_tar_in(test, vm, params):
     3) Delete created file
     4) Check file on guest
     """
-    content = "This is file for test of virt-tar-in."
+    content = "This is file for test of virt-tar-in.\n"
     path = params.get("vt_temp_file", "/tmp/test_virt_tar_in")
     file_dir = os.path.dirname(path)
     path_on_host = os.path.join(data_dir.get_tmp_dir(),
@@ -159,7 +159,7 @@ def test_virt_copy_in(test, vm, params):
     3) Delete created file
     4) Check file on guest
     """
-    content = "This is file for test of virt-copy-in."
+    content = "This is file for test of virt-copy-in.\n"
     path = params.get("vt_temp_file", "/tmp/test_virt_copy_in")
     path_dir = os.path.dirname(path)
 
@@ -267,7 +267,7 @@ def test_virt_copy_out(test, vm, params):
             test.fail("Catted file do not match.")
 
 
-def run_virt_file_operations(test, params, env):
+def run(test, params, env):
     """
     Test libguestfs with file commands: virt-tar-in, virt-tar-out,
                                         virt-copy-in, virt-copy-out
